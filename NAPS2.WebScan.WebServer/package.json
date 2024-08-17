@@ -2,12 +2,19 @@
   "name": "naps2.webscan",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "private": true,
   "dependencies": {
-    "escl-sdk-ts": "^1.0.8"
+    "axios": "^1.7.4",
+    "fast-xml-parser": "^4.4.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.1"
   }
 }

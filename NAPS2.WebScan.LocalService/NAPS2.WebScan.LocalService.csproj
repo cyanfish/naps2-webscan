@@ -16,8 +16,8 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
-        <PackageReference Include="NAPS2.Escl.Server" Version="1.1.1" />
-        <PackageReference Include="NAPS2.Images.ImageSharp" Version="1.1.1" />
-        <PackageReference Include="NAPS2.Sdk" Version="1.1.1" />
+        <PackageReference Include="NAPS2.Escl.Server" Version="1.1.2" />
+        <PackageReference Include="NAPS2.Images.ImageSharp" Version="1.1.2" />
+        <PackageReference Include="NAPS2.Sdk" Version="1.1.2" />
     </ItemGroup>
 </Project>
