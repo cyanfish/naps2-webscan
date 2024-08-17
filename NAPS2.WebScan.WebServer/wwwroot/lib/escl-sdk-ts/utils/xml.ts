@@ -1,4 +1,4 @@
-const Parser = require('fast-xml-parser')
+import { XMLParser, XMLBuilder } from 'fast-xml-parser'
 var defaultOptions = {
   attributeNamePrefix: "_",
   attrNodeName: "", //default is false
@@ -10,8 +10,8 @@ var defaultOptions = {
   indentBy: "  ",
   supressEmptyNode: false
 };
-const json2XMLParser = new Parser.XMLParser(defaultOptions)
-const json2XMLBuilder = new Parser.XMLBuilder(defaultOptions)
+const json2XMLParser = new XMLParser(defaultOptions)
+const json2XMLBuilder = new XMLBuilder(defaultOptions)
 
 // let xml =require( './capabilities.xml')
 

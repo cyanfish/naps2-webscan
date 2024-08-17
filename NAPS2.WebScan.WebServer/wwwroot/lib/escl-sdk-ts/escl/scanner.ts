@@ -1,7 +1,7 @@
-const { getScanSettingConfig, getScannerBrightness } = require('./getCapabilities')
-const { getScanSetting } = require('./serializeScanSetting')
+import { getScanSettingConfig, getScannerBrightness } from './getCapabilities'
+import { getScanSetting } from './serializeScanSetting'
 
-const request = require('../utils/request').default;
+import request from '../utils/request'
 /**
  * 
  * @param { Object } opts 
@@ -12,9 +12,9 @@ const request = require('../utils/request').default;
 
 interface IScannerConstructor {
 	ip: string;
-	version: number;
-	rs: string;
-	port: number;
+	version?: number;
+	rs?: string;
+	port?: number;
 }
 class Scanner {
 	private ip: string;
@@ -64,7 +64,7 @@ class Scanner {
 			data: getScanSetting({ ...params, Version: this.version })
 		}
 		let res: any = await this.execute('ScanJobs', data)
-		return res.headers.Location
+		return res.headers.location
 	}
 
 	async ScannerStatus(): Promise<Record<string, any>> {
@@ -79,6 +79,12 @@ class Scanner {
 	NextDocument(jobId: string): Promise<any> {
 		return this.execute(`ScanJobs/${jobId}/NextDocument`, { responseType: 'arraybuffer' }).then(res => {
 			return res
+		}, err => {
+			if (err.response && err.response.status === 503) {
+				return new Promise(resolve => setTimeout(resolve, 2000))
+					.then(_ => this.NextDocument(jobId));
+			}
+			return Promise.reject(err);
 		})
 	}
 
@@ -90,4 +96,4 @@ class Scanner {
 }
 
 
-export { Scanner };
+export default Scanner;

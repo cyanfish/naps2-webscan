@@ -1,12 +1,12 @@
-const {
+import {
   PAPPER_PAGE_SIZE,
   // RESOLUTIONS,
   XMLNS_PWG,
   XMLNS_SCAN,
   XMLNS_DEST,
   SCAN_SETTING_KEY_MAP
-} = require('./const')
-const { json2xml } = require('../utils/xml')
+} from './const'
+import { json2xml } from '../utils/xml'
 /**
  * 
  * @param resolution 

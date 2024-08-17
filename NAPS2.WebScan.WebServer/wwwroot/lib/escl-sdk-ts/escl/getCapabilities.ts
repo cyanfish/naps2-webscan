@@ -1,5 +1,5 @@
-const { PAPPER_PAGE_SIZE, DOCUMENT_FORMART, SUPPORED_COLOR_MODES } = require('./const')
-const { getArrayCommonItem } = require('../utils/index')
+import { PAPPER_PAGE_SIZE, DOCUMENT_FORMART, SUPPORED_COLOR_MODES } from './const'
+import { getArrayCommonItem } from '../utils'
 
 export const getScanRegion = (InputCaps: IInputCaps): IScanSettingScanRegion => {
   let ScanRegion: IScanSettingScanRegion = {
@@ -91,7 +91,9 @@ export const getScanSettingConfig = (capabilities: ICapabilities): TScanSetting 
       getDocumentFormat(capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:AdfSimplexInputCaps'])
     ]
     ScanSetting.adf.FeederCapacity = capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:FeederCapacity']
-    ScanSetting.adf.AdfOptions = capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:AdfOptions']["scan:AdfOption"]
+    if (capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:AdfOptions']) {
+      ScanSetting.adf.AdfOptions = capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:AdfOptions']["scan:AdfOption"]
+    }
     if (capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:AdfDuplexInputCaps']) {
       ScanSetting.adf.Duplex = [
         getScanRegion(capabilities['scan:ScannerCapabilities']['scan:Adf']['scan:AdfDuplexInputCaps']),
