@@ -13,20 +13,26 @@ document.getElementById('scan-button').addEventListener('click', async e => {
     const scanner = new Scanner({ip, port});
 
     try {
+        // Query for scanner capabilities
         const capabilities = await scanner.ScannerCapabilities();
-        console.log('scanner ScannerCapabilities', capabilities)
+        console.log('scanner capabilities', capabilities)
 
+        // Start a scan job
         const jobUrl = await scanner.ScanJobs({
+            // Set scanning options
             Resolution: 300
         });
-        console.log('scanner ScanJobs', jobUrl);
+        console.log('job created', jobUrl);
 
-        const jobId = jobUrl.split('/').at(-1);
+        // Get the job ID
+        const jobId = jobUrl.split('/').pop();
 
+        // Wait for the document to be scanned
+        // If you're scanning from a feeder, call NextDocument multiple times for each page until it produces a 404
         const doc = await scanner.NextDocument(jobId);
-        console.log('scanner NextDocument', doc);
+        console.log('scanned document', doc);
 
-
+        // Turn the document JPEG into a blob and load it into the <img> element
         var blob = new Blob([doc.data], {type: "image/jpeg"});
         var imageUrl = window.URL.createObjectURL(blob);
         var img = document.querySelector("#preview") as HTMLImageElement;
