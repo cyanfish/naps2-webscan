@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAPS2.WebScan.LocalService", "NAPS2.WebScan.LocalService\NAPS2.WebScan.LocalService.csproj", "{2D22CFDE-41DB-4321-922E-840C3D11AAA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAPS2.WebScan.WebServer", "NAPS2.WebScan.WebServer\NAPS2.WebScan.WebServer.csproj", "{77E8B63A-C55B-4457-A025-D6BF8CE5091D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D22CFDE-41DB-4321-922E-840C3D11AAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D22CFDE-41DB-4321-922E-840C3D11AAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D22CFDE-41DB-4321-922E-840C3D11AAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D22CFDE-41DB-4321-922E-840C3D11AAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E8B63A-C55B-4457-A025-D6BF8CE5091D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E8B63A-C55B-4457-A025-D6BF8CE5091D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E8B63A-C55B-4457-A025-D6BF8CE5091D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E8B63A-C55B-4457-A025-D6BF8CE5091D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
