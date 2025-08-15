@@ -120,7 +120,7 @@ const SCAN_SETTING_KEY_MAP:Record<keyof ISupportedScanSetting,string> | Record<k
     Contrast: 'scan:Contrast',
     CompressionFactor: 'scan:CompressionFactor',
     DocumentFormatExt: 'scan:DocumentFormatExt',
-    DocumentFormat: 'scan:DocumentFormat',
+    DocumentFormat: 'pwg:DocumentFormat',
     Duplex: 'scan:Duplex',
     Resolution: 'scan:Resolution', 
     ScanDestinations: 'scan:ScanDestinations',
